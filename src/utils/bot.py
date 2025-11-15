@@ -1,10 +1,9 @@
 import json
-import chess
 import torch
 from torch import nn, optim
 from torch.utils.data import IterableDataset, DataLoader
 from transformers import PretrainedConfig, PreTrainedModel
-from .utils import fen_to_board
+from .utils import fen_to_board, encode_board
 
 
 # Define a config class (required for compatibility)
@@ -53,25 +52,6 @@ class EvalDataset(IterableDataset):
                     yield board_tensor, evaluation
                 except (json.JSONDecodeError, KeyError):
                     continue
-
-
-# Encodes chess board to tensor (64 squares * 6 piece types)
-def encode_board(board: chess.Board) -> torch.Tensor:
-    piece_map = board.piece_map()
-    vector = torch.zeros(64 * 6)
-    piece_to_idx = {
-        chess.PAWN: 0,
-        chess.KNIGHT: 1,
-        chess.BISHOP: 2,
-        chess.ROOK: 3,
-        chess.QUEEN: 4,
-        chess.KING: 5,
-    }
-    for square, piece in piece_map.items():
-        offset = 6 * square
-        idx = piece_to_idx[piece.piece_type]
-        vector[offset + idx] = 1 if piece.color == chess.WHITE else -1
-    return vector
 
 
 # Training loop for the neural network

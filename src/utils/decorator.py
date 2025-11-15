@@ -2,10 +2,12 @@ from typing import Callable
 from dataclasses import dataclass
 from chess import Board, Move
 from chess.pgn import read_game
+from dataclasses import field
 import contextlib
 import io
 import logging
 import sys
+
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
@@ -15,6 +17,7 @@ class GameContext:
     board: Board
     timeLeft: int  # in milliseconds
     logProbabilities: Callable[[dict[Move, float]], None]
+    state: dict = field(default_factory=dict)
 
 
 class ChessManager:

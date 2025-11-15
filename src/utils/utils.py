@@ -1,8 +1,13 @@
 import io
 import chess
 import torch
+import os
+import gdown
 from .bot import *
-from transformers import AutoModel
+
+
+# Configuration for the chess bot model
+MODEL_LOCAL_PATH = "./Training/model_weights.pt"
 
 
 # Convert FEN string to a chess.Board object
@@ -11,22 +16,32 @@ def fen_to_board(fen: str) -> chess.Board:
     return board
 
 
-# Convert PGN text to a chess.Board object
-def pgn_to_board(pgn: str) -> chess.Board:
-    game = chess.pgn.read_game(io.StringIO(pgn))
-    return game.end().board()
-
-
-# Load model from Hugging Face
-def load_model_from_hf(repo_id):
-    hf_model = AutoModel.from_pretrained(
-        repo_id,
-        cache_dir="./.model_cache"
-    )
-    model = EvalNet()
-    model.load_state_dict(hf_model.state_dict())
+# Load model from Google Drive
+def load_model(config):
+    model = EvalNet(config)
+    state_dict = torch.load(MODEL_LOCAL_PATH, map_location="cpu")
+    model.load_state_dict(state_dict)
     model.eval()
     return model
+
+
+# Encodes chess board to tensor (64 squares * 6 piece types)
+def encode_board(board: chess.Board) -> torch.Tensor:
+    piece_map = board.piece_map()
+    vector = torch.zeros(64 * 6)
+    piece_to_idx = {
+        chess.PAWN: 0,
+        chess.KNIGHT: 1,
+        chess.BISHOP: 2,
+        chess.ROOK: 3,
+        chess.QUEEN: 4,
+        chess.KING: 5,
+    }
+    for square, piece in piece_map.items():
+        offset = 6 * square
+        idx = piece_to_idx[piece.piece_type]
+        vector[offset + idx] = 1 if piece.color == chess.WHITE else -1
+    return vector
 
 
 # Minimax search using trained model
