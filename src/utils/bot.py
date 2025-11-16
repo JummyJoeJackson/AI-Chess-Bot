@@ -90,8 +90,14 @@ if __name__ == "__main__":
     # saves the model weights after training
     torch.save(eval_net.state_dict(), "model_weights.pt")
 
+
 # Epoch 1/10, Loss: 85368.5078
 # Epoch 2/10, Loss: 66626.3594
 # Epoch 3/10, Loss: 55276.1562
 # Epoch 4/10, Loss: 56421.5703
 # Epoch 5/10, Loss: 57393.5312
+# Epoch 6/10, Loss: 54811.7734
+# Epoch 7/10, Loss: 54300.6602
+# Epoch 8/10, Loss: 48500.2266
+# Epoch 9/10, Loss: 45347.6797
+# Epoch 10/10, Loss: 42815.9336
