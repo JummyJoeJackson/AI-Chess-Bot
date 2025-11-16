@@ -94,3 +94,4 @@ if __name__ == "__main__":
 # Epoch 2/10, Loss: 66626.3594
 # Epoch 3/10, Loss: 55276.1562
 # Epoch 4/10, Loss: 56421.5703
+# Epoch 5/10, Loss: 57393.5312

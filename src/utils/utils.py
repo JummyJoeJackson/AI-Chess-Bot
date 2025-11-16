@@ -4,7 +4,7 @@ from .bot import *
 
 
 # Configuration for the chess bot model
-MODEL_LOCAL_PATH = "./Training/model_weights.pt"
+MODEL_LOCAL_PATH = "./model_weights.pt"
 
 
 # Convert FEN string to a chess.Board object
