@@ -1,9 +1,0 @@
-__pycache__
-.venv
-venv
-.env.local
-.env
-devtools
-Training
-README.md
-.model_cache
