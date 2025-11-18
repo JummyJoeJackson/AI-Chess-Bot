@@ -81,8 +81,8 @@ def train_chess_model():
             running_loss = 0.0
             count = 0
             for board_tensors, evaluations in dataloader:
-                board_tensors = board_tensors.to(device) # Move data to the GPU
-                evaluations = evaluations.to(device) # Move data to the GPU
+                board_tensors = board_tensors.to(device)
+                evaluations = evaluations.to(device)
 
                 optimizer.zero_grad()
                 outputs = model(board_tensors)
