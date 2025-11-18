@@ -1,6 +1,6 @@
 # AI Chess Bot
 
-This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information into a optimized Minimax Algorithm.
+This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information directly into an optimized Minimax Algorithm.
 
 ## Directory Structure
 
