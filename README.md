@@ -89,6 +89,3 @@ Once you run the app, you should see logs from both the Next.js app and the Pyth
 ## HMR (Hot Module Reloading)
 
 By default, the Next.js app will automatically reload (dismount and remount the subprocess) when you make changes to the code in `/src` OR press the manual reload button on the frontend. This is called HMR (Hot Module Reloading). This means that you don't need to restart the app every time you make a change to the Python code. You can see how it's happening in real-time in the Next.js terminal.
-
-## Legal and whatnot
-
