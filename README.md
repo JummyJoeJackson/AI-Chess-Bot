@@ -1,4 +1,4 @@
-# AI Chess Bot
+# AI Chess Bot ♟️
 
 This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information directly into an optimized move selection algorithm.
 
@@ -73,6 +73,8 @@ Lastly, simply run the Next.js app inside of the devtools folder.
 cd devtools
 npm run dev
 ```
+
+**Visit `http://localhost:3000` in your browser**
 
 ## Troubleshooting
 
