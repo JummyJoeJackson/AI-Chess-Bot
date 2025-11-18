@@ -48,7 +48,7 @@ Afterwards, make a copy of `.env.template` and name it `.env.local` (NOT `.env`)
 
 ## Training the Model
 
-Unfortunately, the model in this repository is untrained as the `model_weights.pt` file for the trained model is too large.
+Unfortunately, the model in this repository is untrained as the `model_weights.pt` file for the trained model is too large. For the same reason there are only a couple example training data files in `/Training/evals`. If you wish to use more data you must make sure it's formatted in the same way and place it in `/Training/evals` while also changing references to training data in `/Training/modal_test.py`.
 
 First, you will need to go to the [Modal](https://modal.com/) website and create an account, then you can run the following:
 
