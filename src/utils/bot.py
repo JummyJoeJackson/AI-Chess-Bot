@@ -3,7 +3,7 @@ import torch
 from torch import nn, optim
 from torch.utils.data import IterableDataset, DataLoader
 from transformers import PretrainedConfig, PreTrainedModel
-from utilities import *
+from .utilities import *
 
 
 # Define a config class (required for compatibility)
@@ -32,8 +32,6 @@ class EvalNet(PreTrainedModel):
 
 # Dataset for loading evaluation data
 class EvalDataset(IterableDataset):
-    #from .utilities import fen_to_board
-
     def __init__(self, file_list, encode_board):
         self.file_list = file_list
         self.encode_board = encode_board
@@ -74,18 +72,3 @@ def train_model(model, dataset, epochs=5, batch_size=64, lr=0.0005):
             print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
         else:
             print(f"Epoch {epoch+1}/{epochs}, No data processed.")
-
-
-# Example usage
-if __name__ == "__main__":
-    #from .utilities import load_model, encode_board
-
-    model = load_model(ChessBotConfig())
-
-    file_list = ['Training/evals/lichess_db_eval_part1_simplified.jsonl', 'Training/evals/lichess_db_eval_part1_simplified.jsonl']
-    dataset = EvalDataset(file_list, encode_board)
-
-    train_model(model, dataset, epochs=1, lr=0.0005)
-
-    torch.save(model.state_dict(), "models/model_weights.pt")
-    print("Model training complete and weights saved to models/model_weights.pt")
