@@ -1,4 +1,4 @@
-# ChessHacks Starter Bot
+# CNN-Powered Chess Bot
 
 This is a starter bot for ChessHacks. It includes a basic bot and devtools. This is designed to help you get used to what the interface for building a bot feels like, as well as how to scaffold your own bot.
 
