@@ -37,7 +37,7 @@ Afterwards, make a copy of `.env.template` and name it `.env.local` (NOT `.env`)
 
 Unfortunately, the model in this repository is untrained as the `model_weights.pt` file for the trained model is too large.
 
-First, you will need to go to the modal[modal.com] website and create an account, then you can run the following script in the training directory:
+First, you will need to go to the [modal]{modal.com} website and create an account, then you can run the following script in the training directory:
 
 ```shell
 python -m modal setup
