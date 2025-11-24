@@ -6,7 +6,7 @@ This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolut
 - [Directory Structure](#Directory-Structure)
 - [Setup](#Setup)
 - [Training](#Training-the-Model)
-- [Running the App](#Running the App)
+- [Running the App](#Running-the-app)
 - [Troubleshooting](#Troubleshooting)
 
 ## Directory Structure
