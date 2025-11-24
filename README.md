@@ -3,9 +3,9 @@
 This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolutional Neural Network that evaluates the scores of different game states and feeds that information directly into an optimized move selection algorithm.
 
 ## Table of Contents
-- [Directory Structure](#Directory Structure)
+- [Directory Structure](#Directory-Structure)
 - [Setup](#Setup)
-- [Training](#Training the Model)
+- [Training](#Training-the-Model)
 - [Running the App](#Running the App)
 - [Troubleshooting](#Troubleshooting)
 
