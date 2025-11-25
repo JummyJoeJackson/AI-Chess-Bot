@@ -17,6 +17,8 @@ This is my submission to ChessHacks 2025. It's a chess bot powered by a Convolut
 
 `/models` is the folder containing the `model_weights.pt` file that is accessed by the program when running.
 
+`splitter.py` is the python script that was used to parse and clean up the original 70gb evaluation file from [LiChess](https://database.lichess.org/#evals)
+
 `serve.py` is the backend that interacts with the Next.js and bot (`/src/main.py`). It also handles hot reloading of the bot when changes are made to it. This file, after receiving moves from the frontend, will communicate the current board status to the bot as a PGN string, and will send the bot's move back to the frontend.
 
 Unless training, you do not need to run the Python files yourself. The Next.js app includes the `serve.py` file as a subprocess, and will run it for you when you run `npm run dev`.
